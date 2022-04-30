@@ -1,34 +1,67 @@
+# The Open Clinic
+
+An opensource software for small and mini clinics to automate and track stock and patient information.
+
+## Tech
+
+The Open Clinic uses a number of open source projects to work properly:
+
+- [Laravel] - The PHP Framework For Web Artisans!
+- [jQuery] - jQuery is a fast, small, and feature-rich JavaScript library.
+- [tailwindcss] - Rapidly build modern websites without ever leaving your HTML
+
 ## Installation
+Clone & Install the dependencies and devDependencies and start the server.
 
-Clone the repository
+```sh
+git clone https://github.com/alaksandarjesus/theopenclinic.git
 
-    git clone https://github.com/alaksandarjesus/AMS-CLINIC.git
+cd theopenclinic
 
-    cd AMS-CLINIC
+composer update
 
-    composer update
+npm install
+```
+For development Envirnonment
 
-    npm install
+```
+php artisan serve
+npm run watch
+```
 
-Create a mysql database
+For production environment
+```
+npm run prod
+```
 
-Copy .env.example & Rename .env
+copy & paste .env.example as .env
 
-Update your db credentials
+update superadmin details in .env file
 
-    DB_CONNECTION=mysql
-    DB_HOST=127.0.0.1
-    DB_PORT=3306
-    DB_DATABASE=openclinic
-    DB_USERNAME=root
-    DB_PASSWORD=
+update database information
 
-If you want to test with dummy data
+Then run below commands
 
-    php artisan migrate:refresh --seed 
+```
+php artisan key:generate
+php artisan migrate:refresh --seed
+```
 
-If you dont want dummy data, use seeders to set super administrator and roles
+## Demo Testing
 
-Generate a key for your application
+To test the demo working on your local navigate to
+```
+database\seeders\DatabaseSeeder.php
+```
+and toogle comments as instructed
 
-    php artisan key:generate
+if you  want to see demo credentials, remove {{-- and --}} from 
+```
+resources\views\guest\login\index.blade.php
+```
+
+
+
+[Laravel]: <https://laravel.com/>
+[jQuery]: <https://jquery.com/>
+[tailwindcss]: <https://tailwindcss.com/>

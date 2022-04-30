@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
     {
 
         $this->call([
-            // Use below for simple basic application
+            // Use below for simple basic application, comment below this if used for demo testing
 
             RolesTableSeeder::class,
             UsersTableSeeder::class,
