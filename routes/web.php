@@ -217,13 +217,3 @@ Route::group(['prefix' => 'messages'], function(){
     Route::post('', 'App\Http\Controllers\Messages\MessagesController@save')->middleware('authorize');
     Route::delete('{uuid}', 'App\Http\Controllers\Messages\MessagesController@delete')->middleware('authorize');
 });
-
-
-
-Route::get('migrate', function () {
-
-    \Artisan::call('migrate:refresh --seed');
-
-    dd("Migration Successful");
-
-});
