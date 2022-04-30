@@ -22,17 +22,7 @@ composer update
 
 npm install
 ```
-For development Envirnonment
 
-```
-php artisan serve
-npm run watch
-```
-
-For production environment
-```
-npm run prod
-```
 
 copy & paste .env.example as .env
 
@@ -46,6 +36,19 @@ Then run below commands
 php artisan key:generate
 php artisan migrate:refresh --seed
 ```
+
+For development Envirnonment
+
+```
+php artisan serve
+npm run watch
+```
+
+For production environment
+```
+npm run prod
+```
+
 
 ## Demo Testing
 
