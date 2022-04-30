@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Models\Pharmacy\Purchase;
+
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Returnn extends Model
+{
+    use SoftDeletes;
+
+    protected $table = 'pharmacy_purchase_order_returns';
+
+    protected $hidden = ['id','purchase_order_item_id','created_by', 'created_at', 'updated_by', 'updated_at', 'deleted_by', 'deleted_at'];
+
+    public function inventory(){
+        return $this->hasOne('App\Models\Pharmacy\Purchase\Inventory', 'id', 'purchase_order_inventory_id');
+    }
+
+    public function getFormattedAttribute(){
+        return (object)[
+            'qty' => $this->qty?number_format($this->qty, 2):'0.00',
+            'tax' => $this->tax?number_format($this->tax, 2):'0.00',
+            'cost' => $this->cost?number_format($this->cost, 2):'0.00',
+            'total' => $this->total?number_format($this->total, 2):'0.00',
+        ];
+    }
+}

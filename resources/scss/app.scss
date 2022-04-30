@@ -1,0 +1,63 @@
+.dropdown-menu.hidden{
+    animation: easeIn;
+    animation-duration: 50ms;
+}
+.dropdown-menu{
+    animation: easeOut;
+    animation-duration: 0.5s;
+    z-index: 1000;
+}
+
+table th{
+    font-weight: 500;
+}
+b, strong {
+    font-weight: 600;
+}
+
+@keyframes easeIn{
+    from{
+        opacity: 100%;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes easeOut{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 100%;
+    }
+}
+
+
+.path {
+    stroke: rgba(3, 3, 3, 0.95);
+    stroke-width: 1;
+    stroke-dasharray: 1000px;
+    stroke-dashoffset: 1000px;    
+    animation: draw 1.5s infinite forwards normal linear;
+    animation-delay: 0.1s;
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 2;
+  }
+}
+
+.container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+
+@media screen and (max-width:767px){
+  
+}
+
+
+
+ 
+
